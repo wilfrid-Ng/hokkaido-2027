@@ -1,0 +1,409 @@
+<!doctype html><html lang="zh-Hant-TW"><head><meta name="robots" content="noindex,nofollow,noarchive"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>北海道雪國八日</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* 版面：一欄式行程手冊，上方日期快捷列；每天一張「車票」卡，餐食用狀態標籤 */
+:root{
+  --bg:#f3f6f8;          /* 雪地 */
+  --paper:#ffffff;
+  --ink:#16263a;         /* 夜空藍 */
+  --muted:#5b6b7d;
+  --line:#d7e0e8;
+  --accent:#1d5d8f;      /* 結冰運河藍 */
+  --accent-soft:#e3eef7;
+  --lamp:#b8641c;        /* 運河瓦斯燈 */
+  --lamp-soft:#fbeedd;
+  --ok:#2f7a4d; --ok-soft:#e2f2e8;
+  --warn:#9a5b00; --warn-soft:#fdf0d5;
+  --bad:#a8322d; --bad-soft:#fbe4e2;
+  --f-display:"Noto Serif TC","Songti TC",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1824;--paper:#162233;--ink:#e6edf4;--muted:#9fb0c2;--line:#2a3a4f;
+  --accent:#7db4e3;--accent-soft:#1c3048;--lamp:#f0a65c;--lamp-soft:#3a2a18;
+  --ok:#7ccf9b;--ok-soft:#173326;--warn:#f2c46b;--warn-soft:#3a2e12;--bad:#f19a93;--bad-soft:#3d1e1d;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1824;--paper:#162233;--ink:#e6edf4;--muted:#9fb0c2;--line:#2a3a4f;
+  --accent:#7db4e3;--accent-soft:#1c3048;--lamp:#f0a65c;--lamp-soft:#3a2a18;
+  --ok:#7ccf9b;--ok-soft:#173326;--warn:#f2c46b;--warn-soft:#3a2e12;--bad:#f19a93;--bad-soft:#3d1e1d;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.35}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--lamp);outline-offset:2px}
+
+header.hero{padding-block:40px 24px}
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;color:var(--accent)}
+.hero h1{font-size:clamp(30px,7vw,46px);font-weight:900;margin-top:6px}
+.hero p{color:var(--muted);margin:10px 0 0}
+.stays{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px;margin-top:20px}
+.stay{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stay b{display:block;font-size:15px}
+.stay span{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+
+nav.days{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav.days a{flex:0 0 auto;text-decoration:none;font-family:var(--f-mono);font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+nav.days a:hover{border-color:var(--accent);color:var(--accent)}
+
+section{margin-top:36px}
+section>h2{font-size:24px;margin-bottom:14px}
+.alerts{display:grid;gap:10px}
+.alert{background:var(--lamp-soft);border-radius:10px;padding:12px 16px}
+.alert b{color:var(--lamp)}
+
+.day{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-top:16px;overflow:hidden;scroll-margin-top:70px}
+.day-head{display:flex;gap:14px;align-items:center;padding:14px 18px;border-bottom:1px dashed var(--line)}
+.date{font-family:var(--f-mono);text-align:center;min-width:54px}
+.date .md{font-size:20px;line-height:1.1;display:block}
+.date .wd{font-size:12px;color:var(--muted)}
+.day-head h3{font-size:19px}
+.day-head .where{font-size:13px;color:var(--muted)}
+.day-body{padding:12px 18px 16px}
+.plan{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.plan li{display:grid;grid-template-columns:58px 1fr;gap:10px}
+.plan .t{font-family:var(--f-mono);font-size:13px;color:var(--accent);padding-top:3px}
+.plan li>div{min-width:0}
+.note{font-size:14px;color:var(--muted)}
+.meals{margin-top:12px;display:grid;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.meal{display:grid;grid-template-columns:28px 1fr;gap:8px;font-size:15px}
+.meal>div{min-width:0}
+.meal .k{font-weight:700;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px;white-space:nowrap}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.ask{background:var(--warn-soft);color:var(--warn)}
+.tag.no{background:var(--bad-soft);color:var(--bad)}
+
+.tbl{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:500}
+td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+.cards{display:grid;gap:12px}
+.rest{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.rest h3{font-size:17px}
+.rest .jp{font-size:14px;color:var(--muted)}
+.rest dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:8px 0 0;font-size:15px}
+.rest dt{color:var(--muted)}
+.rest dd{margin:0;min-width:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+.todo{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.todo li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.todo label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.todo input{margin-top:6px;width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto}
+.todo input:checked+span{color:var(--muted);text-decoration:line-through}
+
+.card-jp{background:var(--paper);border:2px solid var(--accent);border-radius:14px;padding:20px}
+.card-jp p{font-size:19px;line-height:1.9;margin:0 0 10px;font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",var(--f-body)}
+.card-jp .zh{font-size:14px;color:var(--muted);font-family:var(--f-body);line-height:1.7}
+button{font:inherit;font-size:15px;background:var(--accent);color:var(--paper);border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
+ul.plain{margin:0;padding-left:1.2em}
+ul.plain li{margin-bottom:4px}
+footer{margin-top:48px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:480px){.plan li{grid-template-columns:48px 1fr}.day-head,.day-body{padding-left:14px;padding-right:14px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">2027 · 1/30 → 2/6 · 8 DAYS</div>
+  <h1>北海道雪國八日</h1>
+  <p>兩家八人：我家 2 大 2 小（13 歲女、11 歲男），姐姐家 2 大 2 小（10 歲、7 歲男）。輕鬆玩雪、不趕景點，全員蛋奶素（不吃五辛）。</p>
+  <div class="stays">
+    <div class="stay"><b>定山溪豪景酒店</b><span>1/30–2/2 · 3 晚</span></div>
+    <div class="stay"><b>Dormy Inn PREMIUM 小樽</b><span>2/2–2/4 · 2 晚</span></div>
+    <div class="stay"><b>ibis Styles 札幌</b><span>2/4–2/6 · 2 晚</span></div>
+  </div>
+  <p class="note" style="margin-top:14px">航班：去 1/30 桃園 05:00 → 新千歲 09:40；回 2/6 新千歲 10:40 → 桃園 14:15</p>
+</header>
+
+<nav class="days" aria-label="日期">
+  <a href="#d0130">1/30</a><a href="#d0131">1/31</a><a href="#d0201">2/1</a><a href="#d0202">2/2</a><a href="#d0203">2/3</a><a href="#d0204">2/4</a><a href="#d0205">2/5</a><a href="#d0206">2/6</a><a href="#food">素食</a><a href="#money">交通費</a><a href="#todo">待辦</a>
+</nav>
+
+<section>
+  <h2>出發前一定要知道</h2>
+  <div class="alerts">
+    <div class="alert"><b>定山溪飯店不准帶外食。</b>官網 FAQ 寫明不能帶食物飲料進館（館內商店買的可以），自助餐以海鮮為主，也沒有素食說明。三晚吃什麼，要先打電話問飯店（見待辦第 1 項）。如果飯店既不能做素、也不准帶外食：問館內商店賣哪些東西能吃，或請飯店通融讓我們在房間吃自備食物；都不行的話，考慮把定山溪縮成 2 晚，或換一家能做素的溫泉旅館。</div>
+    <div class="alert"><b>春節撞上雪祭，會很擠。</b>2027 台灣春節連假 2/4–2/10，剛好跟札幌雪祭 2/4–2/11 重疊。餐廳一律先訂位，機場要早到。</div>
+    <div class="alert"><b>回程 2/6 06:30 出發。</b>大年初一的機場人多，包車清晨從飯店門口出發；前一晚先辦好退房結帳。</div>
+    <div class="alert"><b>機上餐要先訂素。</b>去回程都在出發前 24～48 小時向航空公司訂「東方素食」(VOML)，不含五辛，但也不含蛋奶。</div>
+  </div>
+</section>
+
+<section id="days">
+  <h2>每日行程</h2>
+  <p class="note">餐食標籤：<span class="tag ok">可吃</span>有書面依據不用五辛　<span class="tag ask">要先問</span>打電話確認後才算數　<span class="tag no">難</span>查不到能吃的</p>
+
+  <article class="day" id="d0130">
+    <div class="day-head"><div class="date"><span class="md">1/30</span><span class="wd">週六</span></div><div><h3>抵達，只移動和泡湯</h3><div class="where">新千歲 → 札幌 → 定山溪</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">10:40</span><div>出關，走到國內線的 JR 站（約 10 分）。</div></li>
+        <li><span class="t">11:20</span><div>JR 快速 Airport 到札幌站，約 40 分。出關慢了也沒關係，大約每 12 分就有一班。</div></li>
+        <li><span class="t">12:00</span><div>大箱先放札幌站的大型投幣置物櫃（數量有限）或行李寄放處，再去車站內吃午餐，不要拖大箱走結冰的路。</div></li>
+        <li><span class="t">13:45</span><div>札幌站北口集合，14:00 搭飯店免費接駁車，約 14:50 到飯店（要電話預約，確認有 8 個座位）。</div></li>
+        <li><span class="t">下午</span><div>室內泳池（住客 14:00–21:00 免費）或泡湯，早點睡。凌晨就出門，小孩一定累。</div></li>
+      </ul>
+      <div class="meals">
+        <div class="meal"><span class="k">午</span><div><span class="tag ask">要先問</span>壁の穴（札幌站 Stellar Place 6F 義大利麵），清單寫可做五葷抜き，週六中午一定要訂位。備案：在車站便利商店買鹽飯糰、麵包，在車站裡吃。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>飯店自助餐，看飯店電話怎麼答覆。</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="day" id="d0131">
+    <div class="day-head"><div class="date"><span class="md">1/31</span><span class="wd">週日</span></div><div><h3>三笠滑雪場玩雪</h3><div class="where">定山溪，飯店走路約 7 分</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">上午</span><div>走到定山溪三笠滑雪場：家庭用的緩坡，沒有纜椅，雪橇免費借。堆雪人、打雪仗、滑雪橇。</div></li>
+        <li><span class="t">下午</span><div>回飯店泡湯、玩泳池。</div></li>
+      </ul>
+      <p class="note">營業時間只查到 2018 年資料（9:00–16:00），要打電話確認 011-598-2173。孩子玩不過癮的話，2/1 可改去札幌國際滑雪場（見下一天）。</p>
+      <div class="meals">
+        <div class="meal"><span class="k">午</span><div><span class="tag no">難</span>定山溪溫泉街查不到素食店，飯店又不准帶外食，所以便利商店買的也不能帶回房間吃。要問飯店：館內有沒有午餐能做素、館內商店賣什麼。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>飯店自助餐。</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="day" id="d0201">
+    <div class="day-head"><div class="date"><span class="md">2/1</span><span class="wd">週一</span></div><div><h3>定山溪慢活日</h3><div class="where">溫泉街散步、足湯、拍照</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">上午</span><div>睡飽，溫泉街散步拍照、泡足湯，再去三笠玩一次雪。</div></li>
+        <li><span class="t">選項</span><div>想玩大一點的：搭定山溪 Ski Liner 去札幌國際滑雪場（去程約 45 分，前一天 21:00 前上網預約；來回大人 2,800、兒童 1,400 円）。雪地樂園一日券每人 6,000 円，5 歲以上，8 人 48,000 円；加上巴士一天約 6.6 萬円，大家先看過再決定。</div></li>
+        <li><span class="t">晚上</span><div>看狀況：定山溪神社「雪燈路」2026 年說是最後一次，2027 年還沒公布。有辦、小孩又還有精神再去。</div></li>
+      </ul>
+      <div class="meals">
+        <div class="meal"><span class="k">午</span><div><span class="tag no">難</span>同 1/31。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>飯店自助餐。</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="day" id="d0202">
+    <div class="day-head"><div class="date"><span class="md">2/2</span><span class="wd">週二</span></div><div><h3>經札幌吃午餐，去小樽</h3><div class="where">定山溪 → 札幌 → 円山 → 小樽</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">10:00</span><div>搭飯店免費接駁車，約 10:50 到札幌站北口（要電話預約）。</div></li>
+        <li><span class="t">11:00</span><div>大箱放札幌站的大型投幣置物櫃或行李寄放處，搭地下鐵到円山公園站（大通轉東西線，約 15 分）。</div></li>
+        <li><span class="t">11:30</span><div>札幌円山 Veggy Way 吃午餐（要訂位）。</div></li>
+        <li><span class="t">13:00</span><div>回札幌站拿行李，搭 JR 快速到小樽（約 35 分），Dormy Inn 在小樽站前 1 分。</div></li>
+        <li><span class="t">下午</span><div>放好行李，逛堺町通、甜點店（看成分有沒有ゼラチン）。</div></li>
+        <li><span class="t">傍晚</span><div>小樽運河，日落（約 16:45）到點燈拍照，拍完早點回飯店。</div></li>
+      </ul>
+      <p class="note">車資：JR 8 人約 5,200 円，加地下鐵來回，比包車便宜很多。要先確認兩件事：接駁車大箱能不能上車（座位不保證），札幌站的大型置物櫃數量有限。如果行李太麻煩，改成包車直達小樽，午餐吃なかや（要確認週二有開）；8 人＋大箱要問清楚車型夠不夠大。</p>
+      <div class="meals">
+        <div class="meal"><span class="k">午</span><div><span class="tag ok">可吃</span>Veggy Way：全店純素、不用五辛。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>藪半（小樽站旁蕎麥麵）可改昆布湯底，要問能不能不放蔥。備案：便利商店買回 Dormy Inn 房間吃（入住時確認可以）。</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="day" id="d0203">
+    <div class="day-head"><div class="date"><span class="md">2/3</span><span class="wd">週三</span></div><div><h3>天狗山玩雪＋夜景</h3><div class="where">小樽站搭公車約 20 分</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">上午</span><div>睡飽、泡湯，慢慢逛。</div></li>
+        <li><span class="t">12:00</span><div>計程車到なかや吃手打蕎麥（約 5–8 分）。</div></li>
+        <li><span class="t">13:30</span><div>吃完直接叫兩台計程車到天狗山纜車站，不必回小樽站。（從小樽站去的話：4 號月台搭 9 號公車，約 17–20 分，每小時 2–3 班。）</div></li>
+        <li><span class="t">14:00</span><div>玩 Snow Park 1～1.5 小時：雪橇 1 小時 500 円、雪地甜甜圈 1 小時 1,000 円，入場免費。</div></li>
+        <li><span class="t">16:30</span><div>搭纜車上山，看日落（約 16:45）接著看夜景，17:30～18:00 下山。</div></li>
+      </ul>
+      <p class="note">Snow Park 在山頂還是山腳，官網沒寫清楚，打 0134-33-7381 問。纜車來回大人 2,000、兒童 1,000 円（國中生算大人）。零下又風大，不要在戶外待太久，多帶一雙手套。</p>
+      <div class="meals">
+        <div class="meal"><span class="k">午</span><div><span class="tag ask">要先問</span>なかや：純素蕎麥，有五葷抜き菜單的紀錄。只收現金，營業日各來源不一致，一定要打電話。公休的話改去藪半。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag no">難</span>小樽查不到晚上可靠的店。藪半，或便利商店買回 Dormy Inn 房間吃。</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="day" id="d0204">
+    <div class="day-head"><div class="date"><span class="md">2/4</span><span class="wd">週四</span></div><div><h3>回札幌，雪祭開幕夜</h3><div class="where">小樽 → 札幌中島公園</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">上午</span><div>小樽補拍照、買伴手禮。</div></li>
+        <li><span class="t">午後</span><div>JR 快速到札幌站（約 35 分）。一般計程車只坐 4 人、放 2 個大箱，8 人加行李要先預約 Jumbo 計程車，或叫 3～4 台到 ibis Styles。雪祭期間車站排班會很長。</div></li>
+        <li><span class="t">晚上</span><div>走路 3–5 分到薄野會場看冰雕；體力夠再走 12–15 分到大通會場看點燈。</div></li>
+      </ul>
+      <div class="meals">
+        <div class="meal"><span class="k">午</span><div><span class="tag ask">要先問</span>到札幌站就在壁の穴吃（Stellar Place 6F，車站裡），要訂位。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>福の樹「蔬食番茄拉麵」不用五辛，只有這一道，點餐要講清楚。依據是 2021–2022 年的報導，要再確認。計程車約 5 分。</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="day" id="d0205">
+    <div class="day-head"><div class="date"><span class="md">2/5</span><span class="wd">週五</span></div><div><h3>大通雪雕，下午休息</h3><div class="where">札幌市區，除夕照常吃</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">上午</span><div>大通會場白天看大型雪雕（地下鐵南北線中島公園 → 大通 2 站）。</div></li>
+        <li><span class="t">中午</span><div>二選一。<b>A</b>：搭東西線到円山公園站吃 Veggy Way。<b>B</b>：去 TSUDOME 玩雪會場（雪盆滑道、雪橇、冰滑梯，10:00–16:00；南北線轉東豐線到榮町，再搭接駁車，單程約 45 分以上），午餐在大通或札幌站吃。兩地方向相反，不要同一天都去。</div></li>
+        <li><span class="t">下午</span><div>回飯店休息、整理行李，買隔天早餐。</div></li>
+      </ul>
+      <div class="meals">
+        <div class="meal"><span class="k">午</span><div><span class="tag ok">可吃</span>選 A：Veggy Way（円山公園站走 1–3 分）。選 B：<span class="tag ask">要先問</span>壁の穴。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>壁の穴（札幌站），或再去福の樹。</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="day" id="d0206">
+    <div class="day-head"><div class="date"><span class="md">2/6</span><span class="wd">週六</span></div><div><h3>回程</h3><div class="where">札幌 → 新千歲</div></div></div>
+    <div class="day-body">
+      <ul class="plan">
+        <li><span class="t">06:30</span><div>包車從飯店門口出發，約 1 小時到國際線。前一晚先退房結帳，存好司機的聯絡方式。</div></li>
+        <li><span class="t">10:40</span><div>起飛，14:15 到桃園。</div></li>
+      </ul>
+      <p class="note">備案：薄野機場直達巴士，6:00 後每 30 分一班，8 人約 9,750 円，不能預約，要拖行李走一段。</p>
+      <div class="meals">
+        <div class="meal"><span class="k">早</span><div><span class="tag ok">可吃</span>前一晚買好的麵包、鹽飯糰，在房間吃。</div></div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="food">
+  <h2>不吃五辛的素食餐廳</h2>
+  <p>三家飯店走路 10 分鐘內，都找不到確定不用五辛的店。下面是有書面依據的幾家，營業時間與 8 人座位都要先打電話問。</p>
+  <div class="cards">
+    <div class="rest">
+      <h3>Veggy Way</h3><div class="jp">Holistic Bio Cafe Veggy Way · 札幌円山</div>
+      <dl>
+        <dt>依據</dt><dd>札幌觀光協會官網寫明不用五葷，全店純素。最可靠。</dd>
+        <dt>時間</dt><dd>11:30–18:00（餐點最後點餐 17:00），沒有晚餐；公休看官網每月公告</dd>
+        <dt>地址</dt><dd>中央區大通西 27 丁目 2-3，地下鐵円山公園站走 1–3 分</dd>
+        <dt>電話</dt><dd class="mono">011-624-7632</dd>
+        <dt>訂位</dt><dd><a href="https://veggy-way.com/reserve/" target="_blank" rel="noopener">官網訂位表單</a>，店面小，一定要訂</dd>
+      </dl>
+    </div>
+    <div class="rest">
+      <h3>福の樹</h3><div class="jp">薬膳 福の樹 · 札幌南 4 西 10</div>
+      <dl>
+        <dt>依據</dt><dd>「蔬食番茄拉麵」不用肉、魚、乳製品和五葷（2021–2022 年報導，要再確認）。只有這道，招牌是蝦湯拉麵。</dd>
+        <dt>時間</dt><dd>平日 11:30–15:00、17:00–21:00；週六日 11:30–21:00；週一公休</dd>
+        <dt>電話</dt><dd class="mono">011-511-3055</dd>
+      </dl>
+    </div>
+    <div class="rest">
+      <h3>なかや</h3><div class="jp">手打蕎麥 · 小樽住ノ江</div>
+      <dl>
+        <dt>依據</dt><dd>素食店清單寫「有五葷與酒精抜き的菜單」，HappyCow 標為純素（2026-07 仍有評論）。</dd>
+        <dt>時間</dt><dd>只有午餐，營業日各來源不一致</dd>
+        <dt>電話</dt><dd class="mono">0134-25-2511</dd>
+        <dt>付款</dt><dd>只收現金</dd>
+      </dl>
+    </div>
+    <div class="rest">
+      <h3>壁の穴</h3><div class="jp">義大利麵 · 札幌站 Stellar Place 6F</div>
+      <dl>
+        <dt>依據</dt><dd>只有一份素食清單寫「ベジタリアン、五葷抜きに対応」，沒有其他佐證，要電話確認。</dd>
+        <dt>電話</dt><dd class="mono">011-209-5107</dd>
+      </dl>
+    </div>
+  </div>
+  <h3 style="margin-top:22px;font-size:18px">飯店早餐與便利商店</h3>
+  <ul class="plain">
+    <li>三家飯店的早餐都沒有素食說明，只能自己挑白飯、現做蛋、麵包、水果、優格。醬料、湯、炒菜都可能有五辛或柴魚。</li>
+    <li>Dormy Inn 小樽早餐大人 3,000、小學生 1,500 円，以海鮮丼為主；宵夜拉麵是雞豬湯頭，不能吃。</li>
+    <li>ibis Styles 早餐大人 2,500、小學生 1,250 円。</li>
+    <li>便利商店挑「塩むすび」（鹽飯糰）。昆布、梅子口味常有柴魚，納豆醬包也有。</li>
+    <li>成分表看到這些就不能吃：ネギ、玉ねぎ、にんにく、ニラ、らっきょう、オニオン、ガーリック、あさつき、エシャロット、コンソメ、ブイヨン、かつお、魚介エキス、チキンエキス、ポークエキス、ラード、ゼラチン。</li>
+  </ul>
+</section>
+
+<section id="card">
+  <h2>給店員看的日文卡</h2>
+  <div class="card-jp" id="jpcard">
+    <p>私たちは8人で、全員ベジタリアンです。卵と乳製品は食べられます。</p>
+    <p>肉・魚介類、かつおだし・鶏ガラなど動物性のだし、ラード、ゼラチンは食べられません。</p>
+    <p>ネギ・玉ねぎ・にんにく・ニラ・らっきょう（五葷）も食べられません。薬味のネギも抜いてください。コンソメやブイヨンなど、調味料に含まれる場合もだめです。</p>
+    <p>この条件で食べられる料理はありますか？よろしくお願いします。</p>
+    <div class="zh">我們 8 個人都吃素，可以吃蛋和奶。不吃肉、海鮮、柴魚或雞骨熬的湯、豬油、吉利丁，也不吃蔥、洋蔥、大蒜、韭菜、蕎頭；佐料的蔥花也請拿掉，高湯塊等調味料裡有也不行。請問有符合的餐點嗎？</div>
+  </div>
+  <p style="margin-top:12px"><button type="button" id="copyBtn">複製日文</button> <span class="note" id="copyMsg" aria-live="polite"></span></p>
+</section>
+
+<section id="money">
+  <h2>交通方式與費用</h2>
+  <p class="note">票價以 5 大 3 小計（13 歲女兒算大人）。全程不買周遊券，買了不划算。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>日期</th><th>怎麼走</th><th>8 人約</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1/30</td><td>JR 機場→札幌，飯店免費接駁到定山溪</td><td class="num">7,980 円</td></tr>
+      <tr><td class="num">1/31</td><td>走路到三笠滑雪場</td><td class="num">0</td></tr>
+      <tr><td class="num">2/1</td><td>選項：Ski Liner 來回札幌國際滑雪場（雪地樂園另計 48,000 円）</td><td class="num">18,200 円</td></tr>
+      <tr><td class="num">2/2</td><td>飯店免費接駁到札幌站＋地下鐵來回円山＋JR 到小樽（備案：包車直達小樽，參考價約 31,250 円起）</td><td class="num">約 8,000 円</td></tr>
+      <tr><td class="num">2/3</td><td>纜車來回＋公車回程，另加去なかや和天狗山的計程車</td><td class="num">約 15,000 円＋計程車</td></tr>
+      <tr><td class="num">2/4</td><td>JR 小樽→札幌 5,200 円＋Jumbo 計程車或 3～4 台計程車到飯店</td><td class="num">約 9,000–12,000 円</td></tr>
+      <tr><td class="num">2/5</td><td>地下鐵（可考慮一日券）；選 TSUDOME 再加接駁車</td><td class="num">約 4,000–4,500 円</td></tr>
+      <tr><td class="num">2/6</td><td>包車到新千歲，06:30 出發</td><td class="num">2.1–2.6 萬円＋高速公路費</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="todo">
+  <h2>出發前待辦</h2>
+  <p class="note">勾選只會記在你自己的手機上，別人看不到。</p>
+  <ul class="todo">
+    <li><label><input type="checkbox" id="t1"><span><b>打給定山溪豪景</b> <span class="mono">011-598-3339</span>（9:00–19:00，只收電話）：能不能準備不吃五辛的素食、准不准帶外食、館內商店賣什麼；預約 1/30 與 2/2 兩趟接駁車並確認 8 個座位、大箱能不能上車；問飯店有沒有玩雪區。</span></label></li>
+    <li><label><input type="checkbox" id="t8"><span><b>訂機上素食</b>：去回程都訂東方素食 (VOML)，出發前 24～48 小時內截止。</span></label></li>
+    <li><label><input type="checkbox" id="t2"><span><b>包車報價</b>：2/6 札幌→新千歲 06:30（2/2 定山溪→小樽直達當備案一起問）。講明 8 人＋幾個 28 吋箱＋隨身包，問車型夠不夠大、含不含高速公路費。另外預約 2/4 札幌站→飯店的 Jumbo 計程車。</span></label></li>
+    <li><label><input type="checkbox" id="t3"><span><b>餐廳訂位</b>：Veggy Way（2/2、2/5 午）、福の樹（2/4 晚）、なかや（2/3 午）、壁の穴（1/30、2/4 午）、藪半（2/2、2/3 晚，確認週三有沒有開）。每家都問能不能做五葷抜き、有沒有 8 人座位。</span></label></li>
+    <li><label><input type="checkbox" id="t4"><span><b>確認玩雪場地</b>：三笠滑雪場 <span class="mono">011-598-2173</span> 營業時間；天狗山 <span class="mono">0134-33-7381</span> Snow Park 在山頂或山腳。</span></label></li>
+    <li><label><input type="checkbox" id="t5"><span><b>證件與保險</b>：小孩護照效期、Visit Japan Web、旅平險與不便險。</span></label></li>
+    <li><label><input type="checkbox" id="t6"><span><b>錢與網路</b>：日幣現金（なかや只收現金）、交通 IC 卡、eSIM。</span></label></li>
+    <li><label><input type="checkbox" id="t7"><span><b>禦寒裝備</b>：雪衣、雪靴在台灣先租好或買好（1/31 一早就玩雪，當地不一定租得到）；鞋底冰爪、防水手套（每人多一雙）、脖圍、毛帽、暖暖包。</span></label></li>
+    <li><label><input type="checkbox" id="t9"><span><b>泳衣與泳帽</b>：定山溪飯店有室內泳池。</span></label></li>
+    <li><label><input type="checkbox" id="t10"><span><b>泡湯提醒</b>：日本溫泉約 7 歲以上就不能進異性浴池，男孩跟爸爸進男湯。</span></label></li>
+  </ul>
+</section>
+
+<section>
+  <h2>天氣與穿著</h2>
+  <p>札幌 2 月平均約 -2.7℃，最低約 -6.2℃，定山溪山區更冷。室內暖氣很強，穿洋蔥式，外層要防水。路面結冰，鞋底一定要止滑。</p>
+</section>
+
+<section>
+  <h2>還沒確定的事</h2>
+  <ul class="plain">
+    <li>定山溪雪燈路 2027 年辦不辦（2026 年官方說是最後一次）。</li>
+    <li>小樽雪燈之路 2027 年 2/6 才開始，住小樽時看不到。</li>
+    <li>TSUDOME 2027 年的內容 12 月中才公布，頁面上寫的是 2026 年的內容。</li>
+    <li>2027 台灣春節連假日期，以人事行政總處公告為準。</li>    <li>各店營業時間多來自旅遊網站，出發前一兩週再確認一次。</li>
+  </ul>
+</section>
+
+<footer>旅行小隊整理 · 最後更新 2026-10-28 · 票價與營業時間以現場為準</footer>
+</div>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click',function(){
+  var ps=document.querySelectorAll('#jpcard p'),txt=[];
+  ps.forEach(function(p){txt.push(p.textContent)});
+  var msg=document.getElementById('copyMsg');
+  navigator.clipboard.writeText(txt.join('\n')).then(function(){msg.textContent='已複製'},function(){
+    var r=document.createRange();r.selectNodeContents(document.getElementById('jpcard'));
+    var s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='已選取，請長按複製';
+  });
+});
+document.querySelectorAll('.todo input').forEach(function(cb){
+  try{cb.checked=localStorage.getItem('hk-'+cb.id)==='1'}catch(e){}
+  cb.addEventListener('change',function(){try{localStorage.setItem('hk-'+cb.id,cb.checked?'1':'0')}catch(e){}});
+});
+</script>
+
+</body></html>
