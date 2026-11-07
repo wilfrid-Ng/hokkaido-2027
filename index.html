@@ -97,6 +97,13 @@ tr:last-child td{border-bottom:0}
 .rest dt{color:var(--muted)}
 .rest dd{margin:0;min-width:0}
 .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.map{display:inline-block;font-size:12px;line-height:1.5;padding:1px 8px;border:1px solid var(--accent);border-radius:999px;text-decoration:none;white-space:nowrap;vertical-align:1px}
+.stay .contact{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
+.stay .contact a.mono{font-size:13px}
+.steps{margin:0;padding-left:1.3em}
+.steps li{margin-bottom:6px}
+.pack{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+h3.sub{margin-top:22px;margin-bottom:10px;font-size:18px}
 
 .todo{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .todo li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
@@ -120,17 +127,17 @@ html{scroll-behavior:smooth}
 <header class="hero">
   <div class="eyebrow">2027 · 1/30 → 2/6 · 8 DAYS</div>
   <h1>北海道雪國八日</h1>
-  <p>兩家八人：我家 2 大 2 小（13 歲女、11 歲男），姐姐家 2 大 2 小（10 歲、7 歲男）。輕鬆玩雪、不趕景點，全員蛋奶素（不吃五辛）。</p>
+  <p>兩家八人：我家 2 大 2 小（13、11 歲），姐姐家 2 大 2 小（10、7 歲）。輕鬆玩雪、不趕景點，全員蛋奶素（不吃五辛）。</p>
   <div class="stays">
-    <div class="stay"><b>定山溪豪景酒店</b><span>1/30–2/2 · 3 晚</span></div>
-    <div class="stay"><b>Dormy Inn PREMIUM 小樽</b><span>2/2–2/4 · 2 晚</span></div>
-    <div class="stay"><b>ibis Styles 札幌</b><span>2/4–2/6 · 2 晚</span></div>
+    <div class="stay"><b>定山溪豪景酒店</b><span>1/30–2/2 · 3 晚</span><div class="contact"><a class="mono" href="tel:0115983339">011-598-3339</a> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%9A%E5%B1%B1%E6%B8%93%E3%83%93%E3%83%A5%E3%83%BC%E3%83%9B%E3%83%86%E3%83%AB" target="_blank" rel="noopener">地圖</a></div></div>
+    <div class="stay"><b>Dormy Inn PREMIUM 小樽</b><span>2/2–2/4 · 2 晚</span><div class="contact"><a class="mono" href="tel:0134215489">0134-21-5489</a> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3PREMIUM%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener">地圖</a></div></div>
+    <div class="stay"><b>ibis Styles 札幌</b><span>2/4–2/6 · 2 晚</span><div class="contact"><a class="mono" href="tel:0115304055">011-530-4055</a> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%93%E3%82%B9%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%BA%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener">地圖</a></div></div>
   </div>
   <p class="note" style="margin-top:14px">航班：去 1/30 桃園 05:00 → 新千歲 09:40；回 2/6 新千歲 10:40 → 桃園 14:15</p>
 </header>
 
 <nav class="days" aria-label="日期">
-  <a href="#d0130">1/30</a><a href="#d0131">1/31</a><a href="#d0201">2/1</a><a href="#d0202">2/2</a><a href="#d0203">2/3</a><a href="#d0204">2/4</a><a href="#d0205">2/5</a><a href="#d0206">2/6</a><a href="#food">素食</a><a href="#money">交通費</a><a href="#todo">待辦</a>
+  <a href="#sos">緊急電話</a><a href="#d0130">1/30</a><a href="#d0131">1/31</a><a href="#d0201">2/1</a><a href="#d0202">2/2</a><a href="#d0203">2/3</a><a href="#d0204">2/4</a><a href="#d0205">2/5</a><a href="#d0206">2/6</a><a href="#food">素食</a><a href="#entry">入境退稅</a><a href="#ic">交通卡</a><a href="#money">交通費</a><a href="#todo">待辦</a><a href="#pack">打包</a>
 </nav>
 
 <section>
@@ -143,6 +150,36 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
+<section id="sos">
+  <h2>緊急電話</h2>
+  <div class="cards">
+    <div class="rest">
+      <h3>有危險，直接打</h3>
+      <dl>
+        <dt><a class="mono" href="tel:110">110</a></dt><dd>警察</dd>
+        <dt><a class="mono" href="tel:119">119</a></dt><dd>救護車、火災</dd>
+      </dl>
+    </div>
+    <div class="rest">
+      <h3>不知道要不要叫救護車、該看哪家醫院</h3>
+      <dl>
+        <dt><a class="mono" href="tel:0112727119">011-272-7119</a></dt><dd>札幌市救急安心中心（也可撥 #7119），24 小時，有中文和英文。札幌市內（含定山溪）可用；官方區域沒有小樽，住小樽時打旅客熱線或 119。</dd>
+        <dt><a class="mono" href="tel:0112321599">011-232-1599</a></dt><dd>北海道兒童夜間諮詢（也可撥 #8000），19:00–8:00。沒寫有外語服務，打之前先有心理準備要講日文。</dd>
+        <dt><a class="mono" href="tel:05038162787">050-3816-2787</a></dt><dd>日本觀光局旅客熱線，24 小時，有中文和英文。可以問生病、受傷、遺失怎麼辦，但原則上不幫忙翻譯或代訂。</dd>
+      </dl>
+    </div>
+    <div class="rest">
+      <h3>護照遺失、重大意外</h3><div class="jp">台北駐日經濟文化代表處札幌分處</div>
+      <dl>
+        <dt>電話</dt><dd><a class="mono" href="tel:0112222930">011-222-2930</a></dd>
+        <dt>急難</dt><dd><a class="mono" href="tel:08014602568">080-1460-2568</a>（非急難重大事件請勿撥打）</dd>
+        <dt>地址</dt><dd>札幌市中央區北 4 條西 4 丁目 1 番地 伊藤大樓 5 樓 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8C%974%E6%9D%A1%E8%A5%BF4%E4%B8%81%E7%9B%AE1%20%E4%BC%8A%E8%97%A4%E3%83%93%E3%83%AB" target="_blank" rel="noopener">地圖</a></dd>
+      </dl>
+    </div>
+  </div>
+  <p class="note" style="margin-top:10px">飯店電話在最上面的住宿卡。旅平險的海外急難電話，請自己存進手機。上網用的 eSIM 通常不能打一般電話，每家至少留一支手機開語音漫遊；上面的 # 短碼打不通時，撥完整號碼。</p>
+</section>
+
 <section id="days">
   <h2>每日行程</h2>
   <p class="note">餐食標籤：<span class="tag ok">可吃</span>有書面依據不用五辛　<span class="tag ask">要先問</span>打電話確認後才算數　<span class="tag no">難</span>查不到能吃的</p>
@@ -151,10 +188,10 @@ html{scroll-behavior:smooth}
     <div class="day-head"><div class="date"><span class="md">1/30</span><span class="wd">週六</span></div><div><h3>抵達，只移動和泡湯</h3><div class="where">新千歲 → 札幌 → 定山溪</div></div></div>
     <div class="day-body">
       <ul class="plan">
-        <li><span class="t">10:40</span><div>出關，走到國內線的 JR 站（約 10 分）。</div></li>
+        <li><span class="t">10:40</span><div>出關，走到國內線的 JR 站（約 10 分）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%E9%A7%85" target="_blank" rel="noopener">地圖</a></div></li>
         <li><span class="t">11:20</span><div>JR 快速 Airport 到札幌站，約 40 分。出關慢了也沒關係，大約每 12 分就有一班。</div></li>
         <li><span class="t">12:00</span><div>大箱先放札幌站的大型投幣置物櫃（數量有限）或行李寄放處，再去車站內吃午餐，不要拖大箱走結冰的路。</div></li>
-        <li><span class="t">13:45</span><div>札幌站北口集合，14:00 搭飯店免費接駁車，約 14:50 到飯店（要電話預約，確認有 8 個座位）。</div></li>
+        <li><span class="t">13:45</span><div>札幌站北口集合，14:00 搭飯店免費接駁車，約 14:50 到飯店（要電話預約，確認有 8 個座位）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E6%B5%B7%E9%81%93%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%8C%97%E5%8C%BA%E5%8C%976%E6%9D%A1%E8%A5%BF4%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener">地圖</a></div></li>
         <li><span class="t">下午</span><div>室內泳池（住客 14:00–21:00 免費）或泡湯，早點睡。凌晨就出門，小孩一定累。</div></li>
       </ul>
       <div class="meals">
@@ -168,7 +205,7 @@ html{scroll-behavior:smooth}
     <div class="day-head"><div class="date"><span class="md">1/31</span><span class="wd">週日</span></div><div><h3>三笠滑雪場玩雪</h3><div class="where">定山溪，飯店走路約 7 分</div></div></div>
     <div class="day-body">
       <ul class="plan">
-        <li><span class="t">上午</span><div>走到定山溪三笠滑雪場：家庭用的緩坡，沒有纜椅，雪橇免費借。堆雪人、打雪仗、滑雪橇。</div></li>
+        <li><span class="t">上午</span><div>走到定山溪三笠滑雪場：家庭用的緩坡，沒有纜椅，雪橇免費借。堆雪人、打雪仗、滑雪橇。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%9A%E5%B1%B1%E6%B8%93%20%E4%B8%89%E7%AC%A0%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4" target="_blank" rel="noopener">地圖</a></div></li>
         <li><span class="t">下午</span><div>回飯店泡湯、玩泳池。</div></li>
       </ul>
       <p class="note">營業時間只查到 2018 年資料（9:00–16:00），要打電話確認 011-598-2173。孩子玩不過癮的話，2/1 可改去札幌國際滑雪場（見下一天）。</p>
@@ -184,8 +221,8 @@ html{scroll-behavior:smooth}
     <div class="day-body">
       <ul class="plan">
         <li><span class="t">上午</span><div>睡飽，溫泉街散步拍照、泡足湯，再去三笠玩一次雪。</div></li>
-        <li><span class="t">選項</span><div>想玩大一點的：搭定山溪 Ski Liner 去札幌國際滑雪場（去程約 45 分，前一天 21:00 前上網預約；來回大人 2,800、兒童 1,400 円）。雪地樂園一日券每人 6,000 円，5 歲以上，8 人 48,000 円；加上巴士一天約 6.6 萬円，大家先看過再決定。</div></li>
-        <li><span class="t">晚上</span><div>看狀況：定山溪神社「雪燈路」2026 年說是最後一次，2027 年還沒公布。有辦、小孩又還有精神再去。</div></li>
+        <li><span class="t">選項</span><div>想玩大一點的：搭定山溪 Ski Liner 去札幌國際滑雪場（去程約 45 分，前一天 21:00 前上網預約；來回大人 2,800、兒童 1,400 円）。雪地樂園一日券每人 6,000 円，5 歲以上，8 人 48,000 円；加上巴士一天約 6.6 萬円，大家先看過再決定。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%AD%E5%B9%8C%E5%9B%BD%E9%9A%9B%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">晚上</span><div>看狀況：定山溪神社「雪燈路」2026 年說是最後一次，2027 年還沒公布。有辦、小孩又還有精神再去。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%9A%E5%B1%B1%E6%B8%93%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">地圖</a></div></li>
       </ul>
       <div class="meals">
         <div class="meal"><span class="k">午</span><div><span class="tag no">難</span>同 1/31。</div></div>
@@ -200,15 +237,15 @@ html{scroll-behavior:smooth}
       <ul class="plan">
         <li><span class="t">10:00</span><div>搭飯店免費接駁車，約 10:50 到札幌站北口（要電話預約）。</div></li>
         <li><span class="t">11:00</span><div>大箱放札幌站的大型投幣置物櫃或行李寄放處，搭地下鐵到円山公園站（大通轉東西線，約 15 分）。</div></li>
-        <li><span class="t">11:30</span><div>札幌円山 Veggy Way 吃午餐（要訂位）。</div></li>
-        <li><span class="t">13:00</span><div>回札幌站拿行李，搭 JR 快速到小樽（約 35 分），Dormy Inn 在小樽站前 1 分。</div></li>
-        <li><span class="t">下午</span><div>放好行李，逛堺町通、甜點店（看成分有沒有ゼラチン）。</div></li>
-        <li><span class="t">傍晚</span><div>小樽運河，日落（約 16:45）到點燈拍照，拍完早點回飯店。</div></li>
+        <li><span class="t">11:30</span><div>札幌円山 Veggy Way 吃午餐（要訂位）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Veggy%20Way%20%E6%9C%AD%E5%B9%8C%20%E5%A4%A7%E9%80%9A%E8%A5%BF27%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">13:00</span><div>回札幌站拿行李，搭 JR 快速到小樽（約 35 分），Dormy Inn 在小樽站前 1 分。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3PREMIUM%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">下午</span><div>放好行李，逛堺町通、甜點店（看成分有沒有ゼラチン）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B0%8F%E6%A8%BD%20%E5%A0%BA%E7%94%BA%E9%80%9A%E3%82%8A" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">傍晚</span><div>小樽運河，日落（約 16:45）到點燈拍照，拍完早點回飯店。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B0%8F%E6%A8%BD%E9%81%8B%E6%B2%B3" target="_blank" rel="noopener">地圖</a></div></li>
       </ul>
       <p class="note">車資：JR 8 人約 5,200 円，加地下鐵來回，比包車便宜很多。要先確認兩件事：接駁車大箱能不能上車（座位不保證），札幌站的大型置物櫃數量有限。如果行李太麻煩，改成包車直達小樽，午餐吃なかや（要確認週二有開）；8 人＋大箱要問清楚車型夠不夠大。</p>
       <div class="meals">
         <div class="meal"><span class="k">午</span><div><span class="tag ok">可吃</span>Veggy Way：全店純素、不用五辛。</div></div>
-        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>藪半（小樽站旁蕎麥麵）可改昆布湯底，要問能不能不放蔥。備案：便利商店買回 Dormy Inn 房間吃（入住時確認可以）。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>藪半（小樽站旁蕎麥麵）可改昆布湯底，要問能不能不放蔥。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%97%AA%E5%8D%8A%20%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener">地圖</a> 備案：便利商店買回 Dormy Inn 房間吃（入住時確認可以）。</div></div>
       </div>
     </div>
   </article>
@@ -218,8 +255,8 @@ html{scroll-behavior:smooth}
     <div class="day-body">
       <ul class="plan">
         <li><span class="t">上午</span><div>睡飽、泡湯，慢慢逛。</div></li>
-        <li><span class="t">12:00</span><div>計程車到なかや吃手打蕎麥（約 5–8 分）。</div></li>
-        <li><span class="t">13:30</span><div>吃完直接叫兩台計程車到天狗山纜車站，不必回小樽站。（從小樽站去的話：4 號月台搭 9 號公車，約 17–20 分，每小時 2–3 班。）</div></li>
+        <li><span class="t">12:00</span><div>計程車到なかや吃手打蕎麥（約 5–8 分）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%AA%E3%81%8B%E3%82%84%20%E5%B0%8F%E6%A8%BD%20%E4%BD%8F%E3%83%8E%E6%B1%9F%20%E8%95%8E%E9%BA%A6" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">13:30</span><div>吃完直接叫兩台計程車到天狗山纜車站，不必回小樽站。（從小樽站去的話：4 號月台搭 9 號公車，約 17–20 分，每小時 2–3 班。） <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E6%B5%B7%E9%81%93%E5%B0%8F%E6%A8%BD%E5%B8%82%E6%9C%80%E4%B8%8A2%E4%B8%81%E7%9B%AE16-15" target="_blank" rel="noopener">地圖</a></div></li>
         <li><span class="t">14:00</span><div>玩 Snow Park 1～1.5 小時：雪橇 1 小時 500 円、雪地甜甜圈 1 小時 1,000 円，入場免費。</div></li>
         <li><span class="t">16:30</span><div>搭纜車上山，看日落（約 16:45）接著看夜景，17:30～18:00 下山。</div></li>
       </ul>
@@ -236,12 +273,12 @@ html{scroll-behavior:smooth}
     <div class="day-body">
       <ul class="plan">
         <li><span class="t">上午</span><div>小樽補拍照、買伴手禮。</div></li>
-        <li><span class="t">午後</span><div>JR 快速到札幌站（約 35 分）。一般計程車只坐 4 人、放 2 個大箱，8 人加行李要先預約 Jumbo 計程車，或叫 3～4 台到 ibis Styles。雪祭期間車站排班會很長。</div></li>
-        <li><span class="t">晚上</span><div>走路 3–5 分到薄野會場看冰雕；體力夠再走 12–15 分到大通會場看點燈。</div></li>
+        <li><span class="t">午後</span><div>JR 快速到札幌站（約 35 分）。一般計程車只坐 4 人、放 2 個大箱，8 人加行李要先預約 Jumbo 計程車，或叫 3～4 台到 ibis Styles。雪祭期間車站排班會很長。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%93%E3%82%B9%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%BA%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">晚上</span><div>走路 3–5 分到薄野會場（薄野站一帶的大馬路）看冰雕； <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%99%E3%81%99%E3%81%8D%E3%81%AE%E9%A7%85%20%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener">地圖</a> 體力夠再走 12–15 分到大通會場看點燈。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E6%B5%B7%E9%81%93%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%A4%A7%E9%80%9A%E8%A5%BF5%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener">地圖</a></div></li>
       </ul>
       <div class="meals">
-        <div class="meal"><span class="k">午</span><div><span class="tag ask">要先問</span>到札幌站就在壁の穴吃（Stellar Place 6F，車站裡），要訂位。</div></div>
-        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>福の樹「蔬食番茄拉麵」不用五辛，只有這一道，點餐要講清楚。依據是 2021–2022 年的報導，要再確認。計程車約 5 分。</div></div>
+        <div class="meal"><span class="k">午</span><div><span class="tag ask">要先問</span>到札幌站就在壁の穴吃（Stellar Place 6F，車站裡），要訂位。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A3%81%E3%81%AE%E7%A9%B4%20%E6%9C%AD%E5%B9%8C%E3%82%B9%E3%83%86%E3%83%A9%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9" target="_blank" rel="noopener">地圖</a></div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>福の樹「蔬食番茄拉麵」不用五辛，只有這一道，點餐要講清楚。依據是 2021–2022 年的報導，要再確認。計程車約 5 分。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%96%AC%E8%86%B3%20%E7%A6%8F%E3%81%AE%E6%A8%B9%20%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener">地圖</a></div></div>
       </div>
     </div>
   </article>
@@ -250,8 +287,8 @@ html{scroll-behavior:smooth}
     <div class="day-head"><div class="date"><span class="md">2/5</span><span class="wd">週五</span></div><div><h3>大通雪雕，下午休息</h3><div class="where">札幌市區，除夕照常吃</div></div></div>
     <div class="day-body">
       <ul class="plan">
-        <li><span class="t">上午</span><div>大通會場白天看大型雪雕（地下鐵南北線中島公園 → 大通 2 站）。</div></li>
-        <li><span class="t">中午</span><div>二選一。<b>A</b>：搭東西線到円山公園站吃 Veggy Way。<b>B</b>：去 TSUDOME 玩雪會場（雪盆滑道、雪橇、冰滑梯，10:00–16:00；南北線轉東豐線到榮町，再搭接駁車，單程約 45 分以上），午餐在大通或札幌站吃。兩地方向相反，不要同一天都去。</div></li>
+        <li><span class="t">上午</span><div>大通會場白天看大型雪雕（地下鐵南北線中島公園 → 大通 2 站）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E6%B5%B7%E9%81%93%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%A4%A7%E9%80%9A%E8%A5%BF5%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">中午</span><div>二選一。<b>A</b>：搭東西線到円山公園站吃 Veggy Way。<b>B</b>：去 TSUDOME 玩雪會場（雪盆滑道、雪橇、冰滑梯，10:00–16:00；南北線轉東豐線到榮町，再搭接駁車，單程約 45 分以上）， <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A4%E3%81%A9%E3%83%BC%E3%82%80%20%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener">地圖</a> 午餐在大通或札幌站吃。兩地方向相反，不要同一天都去。</div></li>
         <li><span class="t">下午</span><div>回飯店休息、整理行李，買隔天早餐。</div></li>
       </ul>
       <div class="meals">
@@ -265,7 +302,8 @@ html{scroll-behavior:smooth}
     <div class="day-head"><div class="date"><span class="md">2/6</span><span class="wd">週六</span></div><div><h3>回程</h3><div class="where">札幌 → 新千歲</div></div></div>
     <div class="day-body">
       <ul class="plan">
-        <li><span class="t">06:30</span><div>包車從飯店門口出發，約 1 小時到國際線。前一晚先退房結帳，存好司機的聯絡方式。</div></li>
+        <li><span class="t">06:30</span><div>包車從飯店門口出發，約 1 小時到國際線。前一晚先退房結帳，存好司機的聯絡方式。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%20%E5%9B%BD%E9%9A%9B%E7%B7%9A%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">07:30</span><div>有買退稅商品的話，<b>先到 3 樓退稅機辦好才能托運</b>，行李和商品都帶著（<a href="#tax">流程</a>）。</div></li>
         <li><span class="t">10:40</span><div>起飛，14:15 到桃園。</div></li>
       </ul>
       <p class="note">備案：薄野機場直達巴士，6:00 後每 30 分一班，8 人約 9,750 円，不能預約，要拖行李走一段。</p>
@@ -285,7 +323,7 @@ html{scroll-behavior:smooth}
       <dl>
         <dt>依據</dt><dd>札幌觀光協會官網寫明不用五葷，全店純素。最可靠。</dd>
         <dt>時間</dt><dd>11:30–18:00（餐點最後點餐 17:00），沒有晚餐；公休看官網每月公告</dd>
-        <dt>地址</dt><dd>中央區大通西 27 丁目 2-3，地下鐵円山公園站走 1–3 分</dd>
+        <dt>地址</dt><dd>中央區大通西 27 丁目 2-3，地下鐵円山公園站走 1–3 分 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Veggy%20Way%20%E6%9C%AD%E5%B9%8C%20%E5%A4%A7%E9%80%9A%E8%A5%BF27%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener">地圖</a></dd>
         <dt>電話</dt><dd class="mono">011-624-7632</dd>
         <dt>訂位</dt><dd><a href="https://veggy-way.com/reserve/" target="_blank" rel="noopener">官網訂位表單</a>，店面小，一定要訂</dd>
       </dl>
@@ -295,7 +333,7 @@ html{scroll-behavior:smooth}
       <dl>
         <dt>依據</dt><dd>「蔬食番茄拉麵」不用肉、魚、乳製品和五葷（2021–2022 年報導，要再確認）。只有這道，招牌是蝦湯拉麵。</dd>
         <dt>時間</dt><dd>平日 11:30–15:00、17:00–21:00；週六日 11:30–21:00；週一公休</dd>
-        <dt>電話</dt><dd class="mono">011-511-3055</dd>
+        <dt>電話</dt><dd class="mono">011-511-3055 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%96%AC%E8%86%B3%20%E7%A6%8F%E3%81%AE%E6%A8%B9%20%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener">地圖</a></dd>
       </dl>
     </div>
     <div class="rest">
@@ -303,15 +341,15 @@ html{scroll-behavior:smooth}
       <dl>
         <dt>依據</dt><dd>素食店清單寫「有五葷與酒精抜き的菜單」，HappyCow 標為純素（2026-07 仍有評論）。</dd>
         <dt>時間</dt><dd>只有午餐，營業日各來源不一致</dd>
-        <dt>電話</dt><dd class="mono">0134-25-2511</dd>
+        <dt>電話</dt><dd class="mono">0134-25-2511 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%AA%E3%81%8B%E3%82%84%20%E5%B0%8F%E6%A8%BD%20%E4%BD%8F%E3%83%8E%E6%B1%9F%20%E8%95%8E%E9%BA%A6" target="_blank" rel="noopener">地圖</a></dd>
         <dt>付款</dt><dd>只收現金</dd>
       </dl>
     </div>
     <div class="rest">
       <h3>壁の穴</h3><div class="jp">義大利麵 · 札幌站 Stellar Place 6F</div>
       <dl>
-        <dt>依據</dt><dd>只有一份素食清單寫「ベジタリアン、五葷抜きに対応」，沒有其他佐證，要電話確認。</dd>
-        <dt>電話</dt><dd class="mono">011-209-5107</dd>
+        <dt>依據</dt><dd>只有一份素食清單寫「ベジタリアン、五葷抜きに対応」，沒有其他佐證，要電話確認。Google 地圖上這個電話的店名是 Buco di Muro，打電話時順便確認清單上的做法還適用。</dd>
+        <dt>電話</dt><dd class="mono">011-209-5107 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A3%81%E3%81%AE%E7%A9%B4%20%E6%9C%AD%E5%B9%8C%E3%82%B9%E3%83%86%E3%83%A9%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9" target="_blank" rel="noopener">地圖</a></dd>
       </dl>
     </div>
   </div>
@@ -337,9 +375,41 @@ html{scroll-behavior:smooth}
   <p style="margin-top:12px"><button type="button" id="copyBtn">複製日文</button> <span class="note" id="copyMsg" aria-live="polite"></span></p>
 </section>
 
+<section id="entry">
+  <h2>入境與退稅</h2>
+  <h3 class="sub">Visit Japan Web（入境用）</h3>
+  <ul class="plain">
+    <li><b>一週前先建好帳號、填護照資料，1/29 核對後截圖。</b>我們是 05:00 的飛機，到機場才填來不及。官方只要求抵達入境審查前填好；資料改了要重新產生 QR Code。</li>
+    <li>入境和海關已經合成一個 QR Code，<b>每個人都有自己一個，小孩也要</b>。排隊時每個人的都要拿得出來，截圖可以，先存進手機。</li>
+    <li>同一個帳號可以登錄家人一起填。我們兩家不同戶，能不能用同一個帳號沒查到，建議各家用各家的帳號。</li>
+    <li>新千歲有海關電子閘門，每個人要自己操作；身高未滿 100 公分才能由家人陪同。小孩沒有手機的話，大人先把他們的 QR Code 準備好，現場問工作人員怎麼過。</li>
+  </ul>
+  <h3 class="sub" id="tax" style="scroll-margin-top:70px">買東西退稅（2026/11/1 起的新制）</h3>
+  <p>以前結帳時直接免稅，現在<b>一律先付含稅價，出境時海關確認過才退</b>。</p>
+  <ol class="steps">
+    <li><b>買的時候：</b>同一人、同一家店、同一天，未稅滿 5,000 円才能辦。出示護照，並當場問清楚怎麼退款，每家店不一樣。</li>
+    <li><b>買了以後：</b>吃掉或用掉就不能退，所以要退稅的零食別先開。<b>同一張收據少一件，整張都不退。</b>購買日起 90 天內要帶出境，我們這趟不會超過。</li>
+    <li><b>2/6 到機場：</b>行李先不要托運，連商品一起帶到新千歲國際線 3 樓，到退稅機掃護照。綠燈就完成，紅燈要拿商品給海關看。退稅機 6:00 開始可以用。</li>
+    <li><b>辦完才能托運：</b>托運後就拿不回來辦了。也可以用 Visit Japan Web 線上辦，但要人在國際線出境大廳、安檢前，連機場專用無線網路才能辦，在家辦不了。</li>
+  </ol>
+  <p class="note">現金退款櫃台 Cash Japan 也在 3 樓（7:00–20:00），只限有配合的店家。小孩能不能買、能不能跟大人合併計算，官方說明沒寫，到店問；保險的做法是由大人用自己的護照買。手續費也沒查到。</p>
+</section>
+
+<section id="ic">
+  <h2>交通卡</h2>
+  <ul class="plain">
+    <li><b>Suica、Kitaca（JR 北海道的交通卡）都能用：</b>札幌地下鐵、市電、JR 快速 Airport、札幌到小樽都可以。去定山溪是飯店接駁車，不用卡。</li>
+    <li><b>小孩（7、10、11 歲）買紙本兒童票最簡單。</b>售票機選「こども」，半價。手機上的卡能不能設定成兒童票沒查到。想用卡的話，到札幌站 JR 人工售票窗口（みどりの窓口）問兒童記名 Kitaca，但能不能用護照買也沒查到。</li>
+    <li><b>大人和 13 歲的孩子用一般卡：</b>JR 12 歲以上就算大人（12 歲還在讀小學的除外）。</li>
+    <li><b>iPhone：</b>打開錢包 App 加入 Suica。台灣信用卡官方沒寫一定能用，網友回報 Visa 常失敗、Mastercard 和 Amex 比較順，<b>出發前先試加一次</b>。Apple Pay 未滿 13 歲不能用。</li>
+    <li><b>Android：</b>要有日本的「おサイフケータイ」功能，台灣買的手機多半沒有，就買實體卡。</li>
+    <li><b>實體卡：</b>札幌站的售票機或みどりの窓口可買無記名 Kitaca（只有大人版），不能用信用卡儲值，要備現金。</li>
+  </ul>
+</section>
+
 <section id="money">
   <h2>交通方式與費用</h2>
-  <p class="note">票價以 5 大 3 小計（13 歲女兒算大人）。全程不買周遊券，買了不划算。</p>
+  <p class="note">票價以 5 大 3 小計（13 歲算大人）。全程不買周遊券，買了不划算。</p>
   <div class="tbl"><table>
     <thead><tr><th>日期</th><th>怎麼走</th><th>8 人約</th></tr></thead>
     <tbody>
@@ -364,11 +434,43 @@ html{scroll-behavior:smooth}
     <li><label><input type="checkbox" id="t2"><span><b>包車報價</b>：2/6 札幌→新千歲 06:30（2/2 定山溪→小樽直達當備案一起問）。講明 8 人＋幾個 28 吋箱＋隨身包，問車型夠不夠大、含不含高速公路費。另外預約 2/4 札幌站→飯店的 Jumbo 計程車。</span></label></li>
     <li><label><input type="checkbox" id="t3"><span><b>餐廳訂位</b>：Veggy Way（2/2、2/5 午）、福の樹（2/4 晚）、なかや（2/3 午）、壁の穴（1/30、2/4 午）、藪半（2/2、2/3 晚，確認週三有沒有開）。每家都問能不能做五葷抜き、有沒有 8 人座位。</span></label></li>
     <li><label><input type="checkbox" id="t4"><span><b>確認玩雪場地</b>：三笠滑雪場 <span class="mono">011-598-2173</span> 營業時間；天狗山 <span class="mono">0134-33-7381</span> Snow Park 在山頂或山腳。</span></label></li>
-    <li><label><input type="checkbox" id="t5"><span><b>證件與保險</b>：小孩護照效期、Visit Japan Web、旅平險與不便險。</span></label></li>
-    <li><label><input type="checkbox" id="t6"><span><b>錢與網路</b>：日幣現金（なかや只收現金）、交通 IC 卡、eSIM。</span></label></li>
+    <li><label><input type="checkbox" id="t5"><span><b>證件與保險</b>：小孩護照效期；<a href="#entry">Visit Japan Web</a> 每人一個 QR Code，一週前先填，1/29 核對後截圖；旅平險與不便險，海外急難電話存進手機。</span></label></li>
+    <li><label><input type="checkbox" id="t6"><span><b>錢與網路</b>：日幣現金（なかや只收現金、Kitaca 儲值要現金）；iPhone 先試加 <a href="#ic">Suica</a>；上網用 eSIM，每家至少一支手機開語音漫遊。</span></label></li>
     <li><label><input type="checkbox" id="t7"><span><b>禦寒裝備</b>：雪衣、雪靴在台灣先租好或買好（1/31 一早就玩雪，當地不一定租得到）；鞋底冰爪、防水手套（每人多一雙）、脖圍、毛帽、暖暖包。</span></label></li>
-    <li><label><input type="checkbox" id="t9"><span><b>泳衣與泳帽</b>：定山溪飯店有室內泳池。</span></label></li>
     <li><label><input type="checkbox" id="t10"><span><b>泡湯提醒</b>：日本溫泉約 7 歲以上就不能進異性浴池，男孩跟爸爸進男湯。</span></label></li>
+  </ul>
+</section>
+
+<section id="pack">
+  <h2>要帶的東西</h2>
+  <p class="note">一樣是勾選只記在你自己的手機上。</p>
+  <h3 class="sub">證件與錢</h3>
+  <ul class="todo pack">
+    <li><label><input type="checkbox" id="p1"><span>每個人的護照</span></label></li>
+    <li><label><input type="checkbox" id="p2"><span>Visit Japan Web QR Code 截圖（每人一張）</span></label></li>
+    <li><label><input type="checkbox" id="p3"><span>日幣現金、信用卡</span></label></li>
+    <li><label><input type="checkbox" id="p4"><span>旅平險資料、航班與訂房確認、護照影本</span></label></li>
+  </ul>
+  <h3 class="sub">玩雪與禦寒</h3>
+  <ul class="todo pack">
+    <li><label><input type="checkbox" id="p5"><span>雪衣、雪褲（防水）</span></label></li>
+    <li><label><input type="checkbox" id="p6"><span>雪靴或防滑防水的靴子</span></label></li>
+    <li><label><input type="checkbox" id="p7"><span>鞋底冰爪（放托運行李）</span></label></li>
+    <li><label><input type="checkbox" id="p8"><span>防水手套，每人兩雙</span></label></li>
+    <li><label><input type="checkbox" id="p9"><span>毛帽、脖圍、厚襪</span></label></li>
+    <li><label><input type="checkbox" id="p10"><span>保暖衣、好穿脫的中層衣（室內很熱）</span></label></li>
+    <li><label><input type="checkbox" id="p11"><span>暖暖包</span></label></li>
+    <li><label><input type="checkbox" id="p17"><span>雪鏡或太陽眼鏡、防曬（雪地反光強）</span></label></li>
+    <li><label><input type="checkbox" id="p18"><span>裝濕衣物的袋子</span></label></li>
+  </ul>
+  <h3 class="sub">泡湯與日用</h3>
+  <ul class="todo pack">
+    <li><label><input type="checkbox" id="p12"><span>泳衣、泳帽（定山溪飯店有室內泳池）</span></label></li>
+    <li><label><input type="checkbox" id="p13"><span>乳液、護唇膏</span></label></li>
+    <li><label><input type="checkbox" id="p14"><span>常備藥、小孩的退燒藥</span></label></li>
+    <li><label><input type="checkbox" id="p15"><span>充電器、行動電源（放隨身行李，不要托運）</span></label></li>
+    <li><label><input type="checkbox" id="p16"><span><a href="#card">日文素食卡</a>截圖存手機，沒網路也能拿給店員看</span></label></li>
+    <li><label><input type="checkbox" id="p19"><span>不含五辛的乾糧，應付 1/31、2/1 午餐（定山溪飯店不准帶外食，能不能在館內吃先問飯店；入境時照實申報）</span></label></li>
   </ul>
 </section>
 
@@ -387,7 +489,7 @@ html{scroll-behavior:smooth}
   </ul>
 </section>
 
-<footer>旅行小隊整理 · 最後更新 2026-10-28 · 票價與營業時間以現場為準</footer>
+<footer>旅行小隊整理 · 最後更新 2026-11-07 · 票價與營業時間以現場為準</footer>
 </div>
 
 <script>
