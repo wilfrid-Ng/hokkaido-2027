@@ -105,6 +105,9 @@ tr:last-child td{border-bottom:0}
 .route{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 .route img,.route svg{display:block;width:100%;height:auto}
 .route svg{position:absolute;inset:0;height:100%}
+.staymap{margin:0 0 14px}
+.staymap img{display:block;width:100%;max-width:640px;height:auto;margin:0 auto;border-radius:12px;border:1px solid var(--line)}
+.staymap figcaption{max-width:640px;margin:6px auto 0;font-size:13px;color:var(--muted)}
 .switch{margin:0;padding:10px 14px;background:var(--accent-soft);border-radius:0 0 10px 10px;font-size:15px}
 .switch a{font-weight:700}
 .pack{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
@@ -189,12 +192,18 @@ html{scroll-behavior:smooth}
 
 <section id="route">
   <h2>路線</h2>
+<!--me-->
+  <figure class="staymap">
+    <img src="stay-map.jpg" width="1024" height="1188" loading="lazy" alt="北海道住宿路線圖：新千歲機場 1/30 抵達，定山溪豪景酒店住 1/30–2/2，Dormy Inn PREMIUM 小樽住 2/2–2/4，宜必思尚品札幌酒店住 2/4–2/6，2/6 從新千歲返程；另標札幌雪祭 2/4–2/11 與定山溪雪燈路。">
+    <figcaption>我家住宿路線圖（畫家繪）。定山溪雪燈路 2027 年辦不辦還沒公布，以下方「待確認」為準。</figcaption>
+  </figure>
+<!--/me-->
   <figure class="route">
-    <img src="route.jpg" width="1536" height="1024" alt="札幌周邊雪地地圖：左上小樽、中央札幌、左下定山溪、右下新千歲機場。從機場到札幌，再去定山溪，回札幌後去小樽，再回札幌，最後到機場。">
+    <img src="route.jpg" width="1536" height="1024" alt="札幌周邊雪地地圖：左上小樽、中央札幌、左下定山溪、右下新千歲機場。從機場到札幌，再去定山溪，從定山溪直接包車到小樽，再回札幌，最後到機場。">
     <svg viewBox="0 0 1536 1024" aria-hidden="true">
       <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#b8641c"/></marker></defs>
-      <g stroke="#b8641c" stroke-width="9" stroke-linecap="round"><line x1="1166" y1="743" x2="841" y2="450" marker-end="url(#ah)"/><line x1="671" y1="447" x2="551" y2="539" marker-end="url(#ah)"/><line x1="569" y1="561" x2="689" y2="469" marker-end="url(#ah)"/><line x1="645" y1="345" x2="400" y2="255" marker-end="url(#ah)"/><line x1="410" y1="281" x2="655" y2="371" marker-end="url(#ah)"/><line x1="819" y1="474" x2="1144" y2="767" marker-end="url(#ah)"/></g>
-      <g fill="#1d5d8f" stroke="#fff" stroke-width="5" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif" font-size="48" font-weight="700" text-anchor="middle"><circle cx="1059" cy="646" r="38"/><text fill="#fff" stroke="none" x="1059" y="663">1</text><circle cx="592" cy="462" r="38"/><text fill="#fff" stroke="none" x="592" y="479">2</text><circle cx="668" cy="552" r="38"/><text fill="#fff" stroke="none" x="668" y="569">3</text><circle cx="525" cy="258" r="38"/><text fill="#fff" stroke="none" x="525" y="275">4</text><circle cx="535" cy="368" r="38"/><text fill="#fff" stroke="none" x="535" y="385">5</text><circle cx="926" cy="571" r="38"/><text fill="#fff" stroke="none" x="926" y="588">6</text></g>
+      <g stroke="#b8641c" stroke-width="9" stroke-linecap="round"><line x1="1166" y1="743" x2="841" y2="450" marker-end="url(#ah)"/><line x1="671" y1="447" x2="551" y2="539" marker-end="url(#ah)"/><line x1="520" y1="525" x2="398" y2="300" marker-end="url(#ah)"/><line x1="410" y1="281" x2="655" y2="371" marker-end="url(#ah)"/><line x1="819" y1="474" x2="1144" y2="767" marker-end="url(#ah)"/></g>
+      <g fill="#1d5d8f" stroke="#fff" stroke-width="5" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif" font-size="48" font-weight="700" text-anchor="middle"><circle cx="1059" cy="646" r="38"/><text fill="#fff" stroke="none" x="1059" y="663">1</text><circle cx="592" cy="462" r="38"/><text fill="#fff" stroke="none" x="592" y="479">2</text><circle cx="402" cy="432" r="38"/><text fill="#fff" stroke="none" x="402" y="449">3</text><circle cx="535" cy="368" r="38"/><text fill="#fff" stroke="none" x="535" y="385">4</text><circle cx="926" cy="571" r="38"/><text fill="#fff" stroke="none" x="926" y="588">5</text></g>
       <g fill="#16263a" stroke="#fff" stroke-width="12" paint-order="stroke" stroke-linejoin="round" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif" font-size="60" font-weight="700" text-anchor="middle"><text x="272" y="372">小樽</text><text x="965" y="350">札幌</text><text x="455" y="752">定山溪</text><text x="1222" y="945">新千歲機場</text></g>
     </svg>
   </figure>
@@ -202,8 +211,7 @@ html{scroll-behavior:smooth}
   <ol class="steps" style="margin-top:12px">
     <li><b>1/30 新千歲 → 札幌：</b>JR 快速，中午在札幌站和姐姐家會合吃午餐。</li>
     <li><b>1/30 札幌 → 定山溪：</b>搭飯店接駁車，住 3 晚。</li>
-    <li><b>2/2 定山溪 → 札幌：</b>搭接駁車到札幌站，去円山吃午餐。</li>
-    <li><b>2/2 札幌 → 小樽：</b>JR 快速，住 2 晚。</li>
+    <li><b>2/2 定山溪 → 小樽：</b>兩家包車直達，不經過札幌，住 2 晚。</li>
     <li><b>2/4 小樽 → 札幌：</b>JR 快速，住 ibis Styles 2 晚。</li>
     <li><b>2/6 札幌 → 新千歲：</b>包車 06:30 出發，10:40 起飛回台灣。</li>
   </ol>
@@ -211,8 +219,7 @@ html{scroll-behavior:smooth}
   <ol class="steps" style="margin-top:12px">
     <li><b>1/27 新千歲 → 札幌：</b>JR 快速，住 ANA Crowne Plaza 3 晚。</li>
     <li><b>1/30 札幌 → 定山溪：</b>中午在札幌站和我家會合，搭飯店接駁車，住 3 晚。</li>
-    <li><b>2/2 定山溪 → 札幌：</b>搭接駁車到札幌站，去円山吃午餐。</li>
-    <li><b>2/2 札幌 → 小樽：</b>JR 快速，住 2 晚。</li>
+    <li><b>2/2 定山溪 → 小樽：</b>兩家包車直達，不經過札幌，住 2 晚。</li>
     <li><b>2/4 小樽 → 札幌：</b>JR 快速，回 ANA Crowne Plaza 住 1 晚。</li>
     <li><b>2/5 札幌 → 新千歲：</b>JR 快速，14:40 起飛回台灣。</li>
   </ol>
@@ -337,20 +344,18 @@ html{scroll-behavior:smooth}
   </article>
 
   <article class="day" id="d0202">
-    <div class="day-head"><div class="date"><span class="md">2/2</span><span class="wd">週二</span></div><div><h3>經札幌吃午餐，去小樽</h3><div class="where">定山溪 → 札幌 → 円山 → 小樽</div></div></div>
+    <div class="day-head"><div class="date"><span class="md">2/2</span><span class="wd">週二</span></div><div><h3>包車直達小樽</h3><div class="where">定山溪 → 小樽</div></div></div>
     <div class="day-body">
       <ul class="plan">
-        <li><span class="t">10:00</span><div>搭飯店免費接駁車，約 10:50 到札幌站北口（要電話預約）。</div></li>
-        <li><span class="t">11:00</span><div>大箱放札幌站的大型投幣置物櫃或行李寄放處，搭地下鐵到円山公園站（大通轉東西線，約 15 分）。</div></li>
-        <li><span class="t">11:30</span><div>札幌円山 Veggy Way 吃午餐（要訂位）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Veggy%20Way%20%E6%9C%AD%E5%B9%8C%20%E5%A4%A7%E9%80%9A%E8%A5%BF27%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener">地圖</a></div></li>
-        <li><span class="t">13:00</span><div>回札幌站拿行李，搭 JR 快速到小樽（約 35 分），Dormy Inn 在小樽站前 1 分。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3PREMIUM%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener">地圖</a></div></li>
+        <li><span class="t">10:30</span><div>退房，包車從飯店門口出發，行李直接上車，不用再搬去札幌站。車程約 1 小時多，看路況和雪況。</div></li>
+        <li><span class="t">12:00</span><div>到小樽 Dormy Inn（小樽站前 1 分）寄放行李，走去小樽站旁吃午餐。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3PREMIUM%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener">地圖</a></div></li>
         <li><span class="t">下午</span><div>放好行李，逛堺町通、甜點店（看成分有沒有ゼラチン）。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B0%8F%E6%A8%BD%20%E5%A0%BA%E7%94%BA%E9%80%9A%E3%82%8A" target="_blank" rel="noopener">地圖</a></div></li>
         <li><span class="t">傍晚</span><div>小樽運河，日落（約 16:45）到點燈拍照，拍完早點回飯店。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B0%8F%E6%A8%BD%E9%81%8B%E6%B2%B3" target="_blank" rel="noopener">地圖</a></div></li>
       </ul>
-      <p class="note">車資：JR 8 人約 5,200 円，加地下鐵來回，比包車便宜很多。要先確認兩件事：接駁車大箱能不能上車（座位不保證），札幌站的大型置物櫃數量有限。如果行李太麻煩，改成包車直達小樽，午餐吃なかや（要確認週二有開）；8 人＋大箱要問清楚車型夠不夠大。</p>
+      <p class="note">包車參考價約 31,250 円起，要問清楚含不含高速公路費，還有 8 人加幾個 28 吋大箱，車型放不放得下。中午到小樽是 Dormy Inn 入住前，記得先問能不能寄放行李。</p>
       <div class="meals">
-        <div class="meal"><span class="k">午</span><div><span class="tag ok">可吃</span>Veggy Way：全店純素、不用五辛。</div></div>
-        <div class="meal"><span class="k">晚</span><div><span class="tag ask">要先問</span>藪半（小樽站旁蕎麥麵）可改昆布湯底，要問能不能不放蔥。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%97%AA%E5%8D%8A%20%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener">地圖</a> 備案：便利商店買回 Dormy Inn 房間吃（入住時確認可以）。</div></div>
+        <div class="meal"><span class="k">午</span><div><span class="tag ask">要先問</span>藪半（小樽站旁蕎麥麵）可改昆布湯底，要問能不能不放蔥。</div></div>
+        <div class="meal"><span class="k">晚</span><div><span class="tag no">難</span>小樽查不到晚上可靠的店。中午吃得順利，晚上可再去藪半。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%97%AA%E5%8D%8A%20%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener">地圖</a> 備案：便利商店買回 Dormy Inn 房間吃（入住時確認可以）。</div></div>
       </div>
     </div>
   </article>
@@ -544,7 +549,7 @@ html{scroll-behavior:smooth}
       <tr><td class="num">1/30</td><!--me--><td>JR 機場→札幌，兩家搭飯店免費接駁到定山溪</td><td class="num">4,300 円</td><!--/me--><!--sis--><td>走路或計程車到札幌站，兩家搭飯店免費接駁到定山溪</td><td class="num">0＋計程車</td><!--/sis--></tr>
       <tr><td class="num">1/31</td><td>走路到三笠滑雪場</td><td class="num">0</td></tr>
       <tr><td class="num">2/1</td><td>選項：Ski Liner 來回札幌國際滑雪場（雪地樂園另計 48,000 円）</td><td class="num">18,200 円</td></tr>
-      <tr><td class="num">2/2</td><td>飯店免費接駁到札幌站＋地下鐵來回円山＋JR 到小樽（備案：包車直達小樽，參考價約 31,250 円起）</td><td class="num">約 8,000 円</td></tr>
+      <tr><td class="num">2/2</td><td>包車定山溪→小樽直達（兩家 8 人一台）</td><td class="num">約 31,250 円起</td></tr>
       <tr><td class="num">2/3</td><td>纜車來回＋公車回程，另加去なかや和天狗山的計程車</td><td class="num">約 15,000 円＋計程車</td></tr>
       <tr><td class="num">2/4</td><td>JR 小樽→札幌 8 人＋<!--me-->計程車到飯店<!--/me--><!--sis-->走路回飯店、晚上地下鐵到薄野<!--/sis--></td><td class="num">5,200 円＋<!--me-->計程車<!--/me--><!--sis-->地下鐵<!--/sis--></td></tr>
       <tr><td class="num">2/5</td><!--me--><td>地下鐵（可考慮一日券），選 TSUDOME 再加接駁車</td><td class="num">約 2,200–2,500 円</td><!--/me--><!--sis--><td>到大通看雪雕＋JR 札幌→新千歲</td><td class="num">3,680 円＋地下鐵</td><!--/sis--></tr>
@@ -557,11 +562,11 @@ html{scroll-behavior:smooth}
   <h2>出發前待辦</h2>
   <p class="note">勾選只會記在你自己的手機上，別人看不到。兩家一起的項目（定山溪、餐廳、玩雪場地）先講好誰打，避免重複訂。</p>
   <ul class="todo">
-    <li><label><input type="checkbox" id="t1"><span><b>打給定山溪豪景</b> <span class="mono">011-598-3339</span>（9:00–19:00，只收電話）：能不能準備不吃五辛的素食、准不准帶外食、館內商店賣什麼；預約 1/30 與 2/2 兩趟接駁車並確認 8 個座位、大箱能不能上車；問飯店有沒有玩雪區。</span></label></li>
+    <li><label><input type="checkbox" id="t1"><span><b>打給定山溪豪景</b> <span class="mono">011-598-3339</span>（9:00–19:00，只收電話）：能不能準備不吃五辛的素食、准不准帶外食、館內商店賣什麼；預約 1/30 接駁車並確認 8 個座位、大箱能不能上車；2/2 改包車，問退房時間能不能到 10:30；問飯店有沒有玩雪區。</span></label></li>
     <!--sis--><li><label><input type="checkbox" id="t11"><span><b>打給 ANA Crowne Plaza</b> <span class="mono">011-221-4411</span>：1/27 入住前能不能寄放行李、早餐價格、有沒有不含五辛的素食、能不能在房間吃外帶。</span></label></li><!--/sis-->
     <li><label><input type="checkbox" id="t8"><span><b>訂機上素食</b>：去回程都訂東方素食 (VOML)，出發前 24～48 小時內截止。</span></label></li>
-    <!--me--><li><label><input type="checkbox" id="t2"><span><b>包車報價</b>：2/6 札幌→新千歲 06:30，只有我家 4 人＋行李，問小一點的車型；2/2 定山溪→小樽直達當備案，那趟是 8 人＋幾個 28 吋箱＋隨身包。都問含不含高速公路費。</span></label></li><!--/me-->
-    <li><label><input type="checkbox" id="t3"><span><b>餐廳訂位</b>：<!--me-->Veggy Way（2/2、2/5 午）、福の樹（2/4 晚，2/5 晚備選）、なかや（2/3 午）、壁の穴（1/30、2/4 午，2/5 看選擇）、藪半（2/2、2/3 晚，確認週三有沒有開）。每家都問能不能做五葷抜き、有沒有座位：2/5 是我家 4 人，其他是兩家 8 人。<!--/me--><!--sis-->Veggy Way（1/28、1/29 午；2/2 午）、福の樹（1/27 午、1/29 晚，1/28 晚備選；2/4 晚）、なかや（2/3 午）、壁の穴（1/30、2/4 午）、藪半（2/2、2/3 晚，確認週三有沒有開）。每家都問能不能做五葷抜き、有沒有座位：1/27–1/29 是姐姐家 4 人，其他是兩家 8 人。<!--/sis--></span></label></li>
+    <!--me--><li><label><input type="checkbox" id="t2"><span><b>包車預約</b>：2/2 定山溪→小樽直達 10:30，兩家 8 人＋幾個 28 吋箱＋隨身包；2/6 札幌→新千歲 06:30，只有我家 4 人＋行李，問小一點的車型。都問含不含高速公路費。</span></label></li><!--/me-->
+    <li><label><input type="checkbox" id="t3"><span><b>餐廳訂位</b>：<!--me-->Veggy Way（2/5 午）、福の樹（2/4 晚，2/5 晚備選）、なかや（2/3 午）、壁の穴（1/30、2/4 午，2/5 看選擇）、藪半（2/2 午、晚，2/3 晚，確認週三有沒有開）。每家都問能不能做五葷抜き、有沒有座位：2/5 是我家 4 人，其他是兩家 8 人。<!--/me--><!--sis-->Veggy Way（1/28、1/29 午）、福の樹（1/27 午、1/29 晚，1/28 晚備選；2/4 晚）、なかや（2/3 午）、壁の穴（1/30、2/4 午）、藪半（2/2 午、晚，2/3 晚，確認週三有沒有開）。每家都問能不能做五葷抜き、有沒有座位：1/27–1/29 是姐姐家 4 人，其他是兩家 8 人。<!--/sis--></span></label></li>
     <li><label><input type="checkbox" id="t4"><span><b>確認玩雪場地</b>：三笠滑雪場 <span class="mono">011-598-2173</span> 營業時間；天狗山 <span class="mono">0134-33-7381</span> Snow Park 在山頂或山腳。</span></label></li>
     <li><label><input type="checkbox" id="t5"><span><b>證件與保險</b>：小孩護照效期；<a href="#entry">Visit Japan Web</a> 每人一個 QR Code，一週前先填，出門前一天（<!--me-->1/29<!--/me--><!--sis-->1/26<!--/sis-->）核對後截圖；旅平險與不便險，海外急難電話存進手機。</span></label></li>
     <li><label><input type="checkbox" id="t6"><span><b>錢與網路</b>：日幣現金（なかや只收現金、Kitaca 儲值要現金）；iPhone 先試加 <a href="#ic">Suica</a>；上網用 eSIM，每家至少一支手機開語音漫遊。</span></label></li>
